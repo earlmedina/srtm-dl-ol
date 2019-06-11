@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Using Parcel with OpenLayers</title>
+    <style>
+      #map {
+        width: 600px;
+        height: 600px;
+      }
+
+      .modal {
+          display:    none;
+          position:   fixed;
+          z-index:    1000;
+          top:        0;
+          left:       0;
+          height:     100%;
+          width:      100%;
+          background: rgba( 255, 255, 255, .8 ) 
+                      url('static/loader.gif') 
+                      50% 50% 
+                      no-repeat;
+      }
+
+      /* When the body has the loading class, we turn
+         the scrollbar off with overflow:hidden */
+      body.loading .modal {
+          overflow: hidden;   
+      }
+
+      /* Anytime the body has the loading class, our
+         modal element will be visible */
+      body.loading .modal {
+          display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="modal" id="load">
+      <!-- <img src="static/loader.gif"> -->
+    </div>
+    <div id="target">
+        <button class="btn btn-lg btn-primary" type="button">Get</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
